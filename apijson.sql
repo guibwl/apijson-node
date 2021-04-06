@@ -58,4 +58,26 @@ INSERT INTO `user` VALUES (3, 'tony', 'tiger', 'employee');
 INSERT INTO `user` VALUES (4, 'iris', 'cruise', 'employee');
 COMMIT;
 
+
+-- ----------------------------
+-- Table structure for role
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+BEGIN;
+INSERT INTO `role` VALUES (2, 'kevin', 'admin', 'boss');
+INSERT INTO `role` VALUES (3, 'tony', 'user', 'employee');
+INSERT INTO `role` VALUES (4, 'iris', 'user', 'employee');
+COMMIT;
+
 SET FOREIGN_KEY_CHECKS = 1;
