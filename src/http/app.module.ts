@@ -3,11 +3,13 @@ import { AppController } from './app.controller'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Connection } from 'typeorm'
 import { JsonModule } from './json/json.module'
+import { CatsModule } from './cats/cats.module'
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    JsonModule
+    JsonModule,
+    CatsModule,
   ],
   controllers: [
     AppController

@@ -5,7 +5,7 @@ import { JsonController } from './json.controller'
 import * as entity from '../../entities'
 
 const { config, ...allEntity } = entity
-const entities = Object.keys(allEntity).map(key => entity[key])
+const entities = Object.values(allEntity);
 
 @Module({
   imports: [TypeOrmModule.forFeature(entities)],
