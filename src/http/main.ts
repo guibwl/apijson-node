@@ -1,10 +1,12 @@
 import { NestFactory } from '@nestjs/core'
 import { ApplicationModule } from './app.module'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
-
+import { MyLogger, logger } from './logger.middleware';
+ 
 async function bootstrap(port = 3010) {
   const appOptions = {
     cors: true,
+    logger: new MyLogger(),
   }
   const app = await NestFactory.create(ApplicationModule, appOptions)
 
@@ -16,6 +18,7 @@ async function bootstrap(port = 3010) {
   const document = SwaggerModule.createDocument(app, options)
   SwaggerModule.setup('/docs', app, document)
 
+  app.use(logger);
   await app.listen(port)
 }
 bootstrap()

@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
+import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Connection } from 'typeorm'
 import { JsonModule } from './json/json.module'
+import { AppController } from './app.controller'
 import { CatsModule } from './cats/cats.module'
 
 @Module({
